@@ -9,6 +9,19 @@ class BlogPost extends Model
 {
     use SoftDeletes;
 
+    const UNKNOWN_USER = 1;
+
+    protected $fillable
+        = [
+            'title',
+            'slug',
+            'category_id',
+            'excerpt',
+            'content_raw',
+            'is_published',
+            'published_at',
+        ];
+
     public function category()
     {
         return $this->belongsTo(BlogCategory::class);

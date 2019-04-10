@@ -24,7 +24,7 @@
                 </ul>
                 <br>
                 <div class="tab-content">
-                    <div role="tab-panel" class="tab-panel active" id="maindata">
+                    <div role="tabpanel" class="tab-pane active" id="maindata">
                         <div class="form-group">
                             <label for="title">Загаловок</label>
                             <input name="title" value="{{ $item->title }}"
@@ -43,7 +43,7 @@
                                       class="form-control">{{ old('content_raw', $item->content_raw) }}</textarea>
                         </div>
                     </div>
-                    <div role="tab-panel" class="tab-panel" id="adddata">
+                    <div role="tabpanel" class="tab-pane" id="adddata">
                         <div class="form-group">
                             <label for="category_id">Категория</label>
                             <select name="category_id"
@@ -69,24 +69,24 @@
                                    class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="excerpt">Статья</label>
+                            <label for="excerpt">Выдержка</label>
                             <textarea name="excerpt"
                                       id="excerpt"
                                       rows="3"
                                       class="form-control">{{ old('excerpt', $item->excerpt) }}</textarea>
                         </div>
-                        <div class="form-group">
+                        <div class="form-check">
                             <input type="hidden"
                                    value="0"
                                    name="is_published">
 
                             <input type="checkbox"
-                                   value="{{ $item->is_published }}"
+                                   value="1"
                                    name="is_published"
                                    class="form-check-input"
-                            @if($item->is_published)
-                                checked="checked"
-                            @endif
+                                   @if($item->is_published)
+                                   checked="checked"
+                                    @endif
                             >
                             <label for="is_published" class="form-check-label">Опубликованно</label>
                         </div>
