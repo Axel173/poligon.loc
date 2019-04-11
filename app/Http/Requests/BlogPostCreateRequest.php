@@ -24,7 +24,7 @@ class BlogPostCreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'       => 'required|min:3|max:200',
+            'title'       => 'required|min:5|max:200',
             'slug'        => 'max:200',
             'excerpt'     => 'max:500',
             'content_raw' => 'required|string|max:10000|min:5',

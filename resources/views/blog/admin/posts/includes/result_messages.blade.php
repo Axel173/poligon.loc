@@ -9,7 +9,7 @@
                     <span aria-hidden="true">x</span>
                 </button>
                 <ul>
-                    @foreach($error->all() as $errorTxt)
+                    @foreach($errors->all() as $errorTxt)
                         <li>{{ $errorTxt }}</li>
                     @endforeach
                 </ul>
